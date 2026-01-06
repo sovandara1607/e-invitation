@@ -39,7 +39,7 @@ export default function Footer() {
             Made with <FaHeart className="text-gold" /> for our special day
           </p>
           <p className="text-sm mt-2 opacity-75">
-            © 2026 Sophia & Andre. All rights reserved.
+            © 2026 team ot luy. All rights reserved.
           </p>
         </div>
       </div>
