@@ -130,7 +130,7 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-accent/80 text-lg tracking-widest mb-4 khmer-text"
         >
-          សិរីមង្គល
+          សួស្ដីសិរីមង្គល
         </motion.p>
 
         <motion.h1
@@ -161,9 +161,9 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
           transition={{ duration: 1, delay: 1.2 }}
           className="mb-8"
         >
-          <h2 className="khmer-title text-3xl md:text-4xl text-accent mb-2">សុភា</h2>
+          <h2 className="khmer-title text-3xl md:text-4xl text-accent mb-2">ដូលីន ផានីរាជ</h2>
           <p className="text-accent text-2xl">&</p>
-          <h2 className="khmer-title text-3xl md:text-4xl text-accent mt-2">វិសាល</h2>
+          <h2 className="khmer-title text-3xl md:text-4xl text-accent mt-2">ហុង ណាតា</h2>
         </motion.div>
 
         <motion.p
@@ -172,7 +172,7 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
           transition={{ duration: 1, delay: 1.5 }}
           className="text-accent/70 text-lg mb-12 khmer-text"
         >
-          ថ្ងៃអាទិត្យ ទី៤ ខែមករា ឆ្នាំ២០២៦
+          ថ្ងៃអាទិត្យ ទី១៤ ខែកុម្ភៈ ឆ្នាំ២០២៦
         </motion.p>
 
         {/* Decorative Bottom Border */}
@@ -195,7 +195,7 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
                      hover:bg-accent hover:text-primary transition-all duration-300
                      khmer-text text-lg tracking-wider overflow-hidden group"
         >
-          <span className="relative z-10">បើកមើលការ៉ដអញ្ជើញ</span>
+          <span className="relative z-10">បើកមើលសំបុត្រអញ្ជើញ</span>
           <motion.div
             className="absolute inset-0 bg-accent"
             initial={{ x: "-100%" }}
@@ -204,7 +204,7 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
             style={{ zIndex: 0 }}
           />
           <span className="absolute inset-0 flex items-center justify-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 khmer-text">
-            បើកមើលការ៉ដអញ្ជើញ
+            បើកមើលសំបុត្រអញ្ជើញ
           </span>
         </motion.button>
 
@@ -212,10 +212,10 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 0.7, 0] }}
-          transition={{ duration: 2, delay: 3, repeat: Infinity }}
+          transition={{ duration: 5, delay: 5, repeat: Infinity }}
           className="text-accent/50 text-sm mt-6 khmer-text"
         >
-          ចុចដើម្បីបើក
+          ចុចដើម្បីបើកសំបុត្រអញ្ជើញ
         </motion.p>
       </div>
 

@@ -99,7 +99,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <p className="text-lg tracking-[0.3em] uppercase mb-2 text-accent/80 khmer-text">
-            សិរីមង្គលពិធីភ្ជាប់ពាក្យ
+            សួស្ដីសិរីមង្គលពិធីភ្ជាប់ពាក្យ
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ export default function Hero() {
           className="mb-8"
         >
           <h1 className="khmer-title text-5xl md:text-6xl lg:text-7xl mb-6 text-accent drop-shadow-lg">
-            សុភា
+            ដូលីន ផានីរាជ
           </h1>
           
           {/* Ring Icon */}
@@ -137,7 +137,7 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="khmer-title text-5xl md:text-6xl lg:text-7xl text-accent drop-shadow-lg">
-            វិសាល
+            ហុង ណាតា
           </h1>
         </motion.div>
 
@@ -150,7 +150,7 @@ export default function Hero() {
           <div className="w-48 h-px bg-gradient-to-r from-transparent via-accent to-transparent mx-auto my-8" />
           
           <p className="text-lg tracking-wider mb-6 text-accent/90 khmer-text">
-            សូមអញ្ជើញចូលរួមពិធីភ្ជាប់ពាក្យ
+            សូមគោរពអញ្ជើញចូលរួមពិធីភ្ជាប់ពាក្យ
           </p>
 
           {/* Date Display - Elegant Style */}
@@ -168,17 +168,17 @@ export default function Hero() {
               </div>
 
               <div className="border-l border-r border-accent/30 px-6">
-                <p className="text-6xl font-light">៤</p>
+                <p className="text-6xl font-light">១៤</p>
               </div>
 
               <div>
-                <p className="text-lg tracking-wider khmer-text">មករា</p>
+                <p className="text-lg tracking-wider khmer-text">កុម្ភៈ</p>
                 <p className="text-sm tracking-wider mt-1 khmer-text opacity-70">២០២៦</p>
               </div>
             </div>
 
             <div className="mt-4 pt-4 border-t border-accent/20">
-              <p className="text-sm tracking-wider khmer-text opacity-80">ម៉ោង ៥:០០ រសៀល</p>
+              <p className="text-sm tracking-wider khmer-text opacity-80">ម៉ោង ៨:០០ ព្រឹក</p>
             </div>
           </div>
 
