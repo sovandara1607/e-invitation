@@ -1,14 +1,33 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface LandingCoverProps {
   onEnter: () => void;
 }
 
+// Pre-computed particle positions to avoid hydration mismatch
+const PARTICLE_POSITIONS = [
+  { left: 5, top: 10 }, { left: 15, top: 85 }, { left: 25, top: 30 },
+  { left: 35, top: 60 }, { left: 45, top: 15 }, { left: 55, top: 75 },
+  { left: 65, top: 40 }, { left: 75, top: 90 }, { left: 85, top: 25 },
+  { left: 95, top: 55 }, { left: 10, top: 45 }, { left: 20, top: 70 },
+  { left: 30, top: 5 }, { left: 40, top: 95 }, { left: 50, top: 50 },
+  { left: 60, top: 20 }, { left: 70, top: 65 }, { left: 80, top: 35 },
+  { left: 90, top: 80 }, { left: 12, top: 55 },
+];
+
+const PARTICLE_DURATIONS = [3, 3.5, 4, 4.5, 5, 3.2, 3.8, 4.2, 4.8, 3.6, 4.4, 3.3, 4.1, 3.7, 4.6, 3.9, 4.3, 3.4, 4.7, 3.1];
+const PARTICLE_DELAYS = [0, 0.5, 1, 1.5, 0.3, 0.8, 1.2, 0.2, 0.7, 1.8, 0.4, 0.9, 1.4, 0.6, 1.1, 1.6, 0.1, 1.3, 0.55, 1.7];
+
 export default function LandingCover({ onEnter }: LandingCoverProps) {
   const [isExiting, setIsExiting] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleEnter = () => {
     setIsExiting(true);
@@ -200,23 +219,25 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
         </motion.p>
       </div>
 
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
+      {/* Floating particles - only render animations after mount to avoid hydration mismatch */}
+      {isMounted && PARTICLE_POSITIONS.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-accent/30 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${pos.left}%`,
+            top: `${pos.top}%`,
           }}
+          initial={{ opacity: 0.3, y: 0 }}
           animate={{
             y: [0, -30, 0],
             opacity: [0.3, 0.7, 0.3],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: PARTICLE_DURATIONS[i],
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: PARTICLE_DELAYS[i],
+            ease: "easeInOut",
           }}
         />
       ))}
