@@ -9,13 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F5F0E8",
-        gold: "#D4AF37",
-        sage: "#8A9A5B",
+        emerald: {
+          DEFAULT: "#0A4D3C",
+          light: "#0D5C47",
+          soft: "#E8F3EF",
+          muted: "#C5DED4",
+        },
+        gold: {
+          DEFAULT: "#C9A227",
+          light: "#E5C654",
+        },
+        cream: "#FDFBF7",
       },
       fontFamily: {
-        serif: ["Georgia", "serif"],
-        script: ["Brush Script MT", "cursive"],
+        sans: ["Lato", "sans-serif"],
+        serif: ["Cormorant Garamond", "serif"],
+        display: ["Playfair Display", "serif"],
       },
     },
   },
