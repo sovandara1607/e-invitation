@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ពិធីភ្ជាប់ពាក្យ | សុភា & វិសាល",
+  title: "ពិធីភ្ជាប់ពាក្យ | ផានីរាជ & ណាតា",
   description: "សូមអញ្ជើញចូលរួមពិធីភ្ជាប់ពាក្យរបស់យើងខ្ញុំ",
 };
 
