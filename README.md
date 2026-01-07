@@ -103,7 +103,7 @@ Change fonts in `app/globals.css` by updating the Google Fonts import.
 
 ## Technologies Used
 
-- **Next.js 14** - React framework
+- **Next.js 16** - React framework
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling
 - **Framer Motion** - Animations
