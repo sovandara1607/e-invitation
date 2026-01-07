@@ -1,6 +1,6 @@
 # Wedding E-Invitation
 
-A beautiful, modern wedding invitation website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+A beautiful, modern wedding invitation website built with Next.js 16, TypeScript, Tailwind CSS, and Framer Motion.
 
 ## Features
 
