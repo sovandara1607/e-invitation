@@ -158,28 +158,34 @@ const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ 
-        opacity: 0.15, 
+        opacity: 0.4, 
         scale: 1,
-        rotate: [0, -5, 5, -5, 0],
-        x: [0, -10, 10, -10, 0],
+        rotate: [0, -8, 8, -8, 0],
+        x: [0, -15, 15, -15, 0],
+        y: [0, -10, 10, -10, 0],
       }}
       transition={{ 
         duration: 1.2, 
         delay: 0.2,
         rotate: {
-          duration: 4,
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut"
         },
         x: {
-          duration: 4,
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        },
+        y: {
+          duration: 2.5,
           repeat: Infinity,
           ease: "easeInOut"
         }
       }}
       className="fixed top-0 left-0 pointer-events-none z-0"
     >
-      <svg width="300" height="300" viewBox="0 0 300 300" className="opacity-60">
+      <svg width="300" height="300" viewBox="0 0 300 300" className="opacity-80">
         <defs>
           <linearGradient id="flowerGold1" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#F0D78C" />
@@ -205,28 +211,34 @@ const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ 
-        opacity: 0.15, 
+        opacity: 0.4, 
         scale: 1,
-        rotate: [0, 5, -5, 5, 0],
-        x: [0, 10, -10, 10, 0],
+        rotate: [0, 8, -8, 8, 0],
+        x: [0, 15, -15, 15, 0],
+        y: [0, 10, -10, 10, 0],
       }}
       transition={{ 
         duration: 1.2, 
         delay: 0.4,
         rotate: {
-          duration: 5,
+          duration: 3.5,
           repeat: Infinity,
           ease: "easeInOut"
         },
         x: {
-          duration: 5,
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut"
+        },
+        y: {
+          duration: 3,
           repeat: Infinity,
           ease: "easeInOut"
         }
       }}
       className="fixed bottom-0 right-0 pointer-events-none z-0"
     >
-      <svg width="300" height="300" viewBox="0 0 300 300" className="opacity-60">
+      <svg width="300" height="300" viewBox="0 0 300 300" className="opacity-80">
         <defs>
           <linearGradient id="flowerGold2" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#D4A84B" />
@@ -282,8 +294,28 @@ const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
 
     <motion.div
       initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.3, duration: 0.8 }}
+      animate={{ 
+        opacity: 1, 
+        y: 0,
+        rotate: [0, -1, 1, -1, 0],
+        x: [0, -3, 3, -3, 0],
+      }}
+      transition={{ 
+        delay: 0.3, 
+        duration: 0.8,
+        rotate: {
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        },
+        x: {
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }
+      }}
       className="text-center z-10"
     >
       <FloralBorderTop />
@@ -291,8 +323,28 @@ const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
 
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 0.5, duration: 0.6 }}
+      animate={{ 
+        opacity: 1, 
+        scale: 1,
+        rotate: [0, 0.5, -0.5, 0.5, 0],
+        x: [0, -2, 2, -2, 0],
+      }}
+      transition={{ 
+        delay: 0.5, 
+        duration: 0.6,
+        rotate: {
+          duration: 2.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.2
+        },
+        x: {
+          duration: 2.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.2
+        }
+      }}
       className="text-center my-8 z-10"
     >
       <p className="font-moul text-[#D4A84B]/80 text-xs tracking-[0.3em] mb-4">សូមអញ្ជើញចូលរួម</p>
@@ -312,8 +364,27 @@ const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
 
     <motion.button
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.8, duration: 0.5 }}
+      animate={{ 
+        opacity: 1,
+        rotate: [0, -1, 1, -1, 0],
+        y: [0, -2, 0, -2, 0],
+      }}
+      transition={{ 
+        delay: 0.8, 
+        duration: 0.5,
+        rotate: {
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5
+        },
+        y: {
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5
+        }
+      }}
       whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
       onClick={onOpen}
