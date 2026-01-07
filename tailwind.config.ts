@@ -9,13 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F5F0E8",
-        gold: "#D4AF37",
-        sage: "#8A9A5B",
+        primary: "#2f4427",
+        accent: "#ceb37e",
+        cream: "#f8f5f0",
+        gold: "#ceb37e",
+        sage: "#2f4427",
       },
       fontFamily: {
-        serif: ["Georgia", "serif"],
-        script: ["Brush Script MT", "cursive"],
+        serif: ["Battambang", "Georgia", "serif"],
+        script: ["Moul", "Brush Script MT", "cursive"],
+        khmer: ["Battambang", "serif"],
+        "khmer-title": ["Moul", "cursive"],
       },
     },
   },

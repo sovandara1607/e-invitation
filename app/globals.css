@@ -1,26 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&family=Moul&family=Battambang:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --cream: #F5F0E8;
-  --gold: #D4AF37;
-  --sage: #8A9A5B;
-  --dark-text: #2C2C2C;
+  --primary: #2f4427;
+  --accent: #ceb37e;
+  --cream: #f8f5f0;
+  --dark-text: #2f4427;
 }
 
 body {
-  background-color: var(--cream);
-  color: var(--dark-text);
-  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--primary);
+  color: var(--accent);
+  font-family: 'Battambang', 'Cormorant Garamond', serif;
+}
+
+/* Paper Texture Background */
+.paper-texture {
+  position: relative;
+}
+
+.paper-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
 
 .script-font {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Moul', 'Great Vibes', cursive;
 }
 
+.khmer-title {
+  font-family: 'Moul', cursive;
+  letter-spacing: 0.05em;
+}
+
+.khmer-text {
+  font-family: 'Battambang', serif;
+  line-height: 1.8;
+}
+
+/* Royal Gold Gradient Text */
+.gold-text {
+  background: linear-gradient(135deg, #ceb37e 0%, #f0d99c 50%, #ceb37e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Royal Border Style */
+.royal-border {
+  border: 1px solid var(--accent);
+  position: relative;
+}
+
+.royal-border::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--accent);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Elegant Divider */
+.elegant-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.elegant-divider::before,
+.elegant-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* Fade animations */
 .fade-in {
   animation: fadeIn 1s ease-in;
 }
@@ -36,17 +100,62 @@ body {
   }
 }
 
-.bird-animation {
-  animation: fly 15s ease-in-out infinite;
+/* Shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
-@keyframes fly {
-  0%, 100% {
-    transform: translateX(0) translateY(0);
-  }
-  50% {
-    transform: translateX(100px) translateY(-20px);
-  }
+.shimmer {
+  background: linear-gradient(90deg, var(--accent) 0%, #f0d99c 50%, var(--accent) 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Decorative border pattern */
+.decorative-border {
+  border: 2px solid var(--accent);
+  position: relative;
+}
+
+.decorative-border::before,
+.decorative-border::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent);
+}
+
+.decorative-border::before {
+  top: -5px;
+  left: -5px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.decorative-border::after {
+  bottom: -5px;
+  right: -5px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Khmer Traditional Pattern */
+.khmer-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 15 L45 15 L37 22 L40 32 L30 26 L20 32 L23 22 L15 15 L25 15 Z' fill='none' stroke='%23ceb37e' stroke-width='0.5' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* Lotus decoration */
+.lotus-bg {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='50' cy='70' rx='12' ry='25' fill='%23ceb37e' opacity='0.1'/%3E%3Cellipse cx='35' cy='60' rx='8' ry='18' fill='%23ceb37e' opacity='0.08' transform='rotate(-25 35 60)'/%3E%3Cellipse cx='65' cy='60' rx='8' ry='18' fill='%23ceb37e' opacity='0.08' transform='rotate(25 65 60)'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  background-position: center;
 }
 
 @layer utilities {

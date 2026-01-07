@@ -6,10 +6,9 @@ import { useState } from 'react';
 export default function RSVP() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    phone: '',
     guests: '1',
     attending: 'yes',
-    dietary: '',
     message: '',
   });
 
@@ -33,7 +32,7 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-20 px-4 bg-gradient-to-b from-cream to-[#E8DFD0]">
+    <section id="rsvp" className="py-20 px-4 bg-primary">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,12 +41,12 @@ export default function RSVP() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="script-font text-6xl md:text-7xl mb-4 text-sage">
-            RSVP
+          <h2 className="khmer-title text-4xl md:text-5xl mb-4 text-accent">
+            បញ្ជាក់ការចូលរួម
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
-          <p className="text-lg">
-            Please respond by April 1st, 2026
+          <div className="w-24 h-1 bg-accent mx-auto mb-6"></div>
+          <p className="text-lg text-accent khmer-text">
+            សូមបញ្ជាក់ការចូលរួមរបស់អ្នកមុនថ្ងៃទី ១ មករា ២០២៦
           </p>
         </motion.div>
 
@@ -57,12 +56,12 @@ export default function RSVP() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit}
-          className="bg-white p-8 rounded-lg shadow-xl"
+          className="bg-cream p-8 rounded-lg shadow-xl"
         >
           <div className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Full Name *
+              <label htmlFor="name" className="block text-sm font-medium mb-2 text-primary khmer-text">
+                ឈ្មោះពេញ *
               </label>
               <input
                 type="text"
@@ -71,30 +70,30 @@ export default function RSVP() {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sage focus:border-transparent"
-                placeholder="John Doe"
+                className="w-full px-4 py-3 border border-primary/30 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-primary"
+                placeholder="បញ្ចូលឈ្មោះរបស់អ្នក"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email Address *
+              <label htmlFor="phone" className="block text-sm font-medium mb-2 text-primary khmer-text">
+                លេខទូរស័ព្ទ *
               </label>
               <input
-                type="email"
-                id="email"
-                name="email"
+                type="tel"
+                id="phone"
+                name="phone"
                 required
-                value={formData.email}
+                value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sage focus:border-transparent"
-                placeholder="john@example.com"
+                className="w-full px-4 py-3 border border-primary/30 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-primary"
+                placeholder="០១២ ៣៤៥ ៦៧៨"
               />
             </div>
 
             <div>
-              <label htmlFor="attending" className="block text-sm font-medium mb-2">
-                Will you be attending? *
+              <label htmlFor="attending" className="block text-sm font-medium mb-2 text-primary khmer-text">
+                តើអ្នកនឹងចូលរួមទេ? *
               </label>
               <select
                 id="attending"
@@ -102,50 +101,35 @@ export default function RSVP() {
                 required
                 value={formData.attending}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sage focus:border-transparent"
+                className="w-full px-4 py-3 border border-primary/30 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-primary"
               >
-                <option value="yes">Joyfully Accept</option>
-                <option value="no">Regretfully Decline</option>
+                <option value="yes">បាទ/ចា ខ្ញុំនឹងចូលរួម</option>
+                <option value="no">សូមអភ័យទោស ខ្ញុំមិនអាចចូលរួមបាន</option>
               </select>
             </div>
 
             <div>
-              <label htmlFor="guests" className="block text-sm font-medium mb-2">
-                Number of Guests
+              <label htmlFor="guests" className="block text-sm font-medium mb-2 text-primary khmer-text">
+                ចំនួនភ្ញៀវ
               </label>
               <select
                 id="guests"
                 name="guests"
                 value={formData.guests}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sage focus:border-transparent"
+                className="w-full px-4 py-3 border border-primary/30 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-primary"
               >
-                <option value="1">1 Guest</option>
-                <option value="2">2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
-                <option value="5">5+ Guests</option>
+                <option value="1">១ នាក់</option>
+                <option value="2">២ នាក់</option>
+                <option value="3">៣ នាក់</option>
+                <option value="4">៤ នាក់</option>
+                <option value="5">៥+ នាក់</option>
               </select>
             </div>
 
             <div>
-              <label htmlFor="dietary" className="block text-sm font-medium mb-2">
-                Dietary Restrictions
-              </label>
-              <input
-                type="text"
-                id="dietary"
-                name="dietary"
-                value={formData.dietary}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sage focus:border-transparent"
-                placeholder="Vegetarian, Gluten-free, etc."
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message to the Couple
+              <label htmlFor="message" className="block text-sm font-medium mb-2 text-primary khmer-text">
+                សារជូនពរ
               </label>
               <textarea
                 id="message"
@@ -153,8 +137,8 @@ export default function RSVP() {
                 rows={4}
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-sage focus:border-transparent"
-                placeholder="Share your excitement or well wishes..."
+                className="w-full px-4 py-3 border border-primary/30 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-primary"
+                placeholder="ចែករំលែកសារជូនពររបស់អ្នក..."
               />
             </div>
 
@@ -162,18 +146,18 @@ export default function RSVP() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-sage text-white py-4 rounded-md font-semibold text-lg hover:bg-opacity-90 transition-all shadow-lg"
+              className="w-full bg-primary text-accent py-4 rounded-md font-semibold text-lg hover:bg-opacity-90 transition-all shadow-lg khmer-text"
             >
-              Submit RSVP
+              បញ្ជូន
             </motion.button>
 
             {submitted && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center text-sage font-semibold"
+                className="text-center text-primary font-semibold khmer-text"
               >
-                Thank you for your RSVP! We can't wait to celebrate with you!
+                សូមអរគុណសម្រាប់ការបញ្ជាក់! យើងរីករាយដែលបានជួបអ្នក!
               </motion.div>
             )}
           </div>
