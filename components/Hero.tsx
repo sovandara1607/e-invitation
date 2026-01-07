@@ -99,7 +99,10 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <p className="text-lg tracking-[0.3em] uppercase mb-2 text-accent/80 khmer-text">
-            សួស្ដីសិរីមង្គលពិធីភ្ជាប់ពាក្យ
+            លិខិតអញ្ជើញ
+          </p>
+          <p className="text-lg tracking-[0.3em] uppercase mb-2 text-accent/80 khmer-text">
+            លិខិតអញ្ជើញសិរីមង្គលពិធីភ្ជាប់ពាក្យ
           </p>
         </motion.div>
 
