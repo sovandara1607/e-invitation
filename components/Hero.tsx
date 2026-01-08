@@ -172,7 +172,7 @@ export default function Hero() {
               </div>
 
               <div className="border-l border-r border-accent/30 px-6">
-                <p className="text-6xl font-light">១៤</p>
+                <p className="text-6xl font-light">១៥</p>
               </div>
 
               <div>

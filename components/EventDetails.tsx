@@ -68,7 +68,7 @@ export default function EventDetails() {
             កម្មវិធីសិរីមង្គល<br/><br/>ពិធីភ្ជាប់ពាក្យ
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
-          <p className="text-primary/70 khmer-text">ថ្ងៃអាទិត្យ ទី១៤ ខែកុម្ភៈ ឆ្នាំ២០២៦</p>
+          <p className="text-primary/70 khmer-text">ថ្ងៃអាទិត្យ ទី១៥ ខែកុម្ភៈ ឆ្នាំ២០២៦</p>
         </motion.div>
 
         {/* Countdown Timer */}
@@ -123,7 +123,7 @@ export default function EventDetails() {
             <FaCalendarAlt className="mx-auto text-accent mb-4" size={40} />
             <h3 className="text-2xl mb-2 font-semibold text-accent khmer-text">កាលបរិច្ឆេទ</h3>
             <p className="text-lg text-accent/80 khmer-text">ថ្ងៃអាទិត្យ</p>
-            <p className="text-xl font-semibold text-accent">១៤ កុម្ភៈ ២០២៦</p>
+            <p className="text-xl font-semibold text-accent">១៥ កុម្ភៈ ២០២៦</p>
           </motion.div>
 
           <motion.div

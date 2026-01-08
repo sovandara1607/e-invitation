@@ -35,7 +35,7 @@ export default function Footer() {
 
           <h3 className="khmer-title text-4xl mb-2 text-accent">ផានីរាជ & ណាតា</h3>
           <p className="text-lg mb-4 text-accent/80 khmer-text">ពិធីភ្ជាប់ពាក្យ</p>
-          <p className="text-xl mb-8 text-accent/70">៤ មករា ២០២៦</p>
+          <p className="text-xl mb-8 text-accent/70">១៥ កុម្ភៈ ២០២៦</p>
 
           {/* Contact Info */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">

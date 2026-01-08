@@ -172,7 +172,7 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
           transition={{ duration: 1, delay: 1.5 }}
           className="text-accent/70 text-lg mb-12 khmer-text"
         >
-          ថ្ងៃអាទិត្យ ទី១៤ ខែកុម្ភៈ ឆ្នាំ២០២៦
+          ថ្ងៃអាទិត្យ ទី១៥ ខែកុម្ភៈ ឆ្នាំ២០២៦
         </motion.p>
 
         {/* Decorative Bottom Border */}
