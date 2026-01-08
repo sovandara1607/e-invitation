@@ -3,7 +3,12 @@
 import { motion } from 'framer-motion';
 import { FaArrowDown } from 'react-icons/fa';
 
-export default function Hero() {
+interface HeroProps {
+  guestName: string | null;
+  guestTitle: string;
+}
+
+export default function Hero({ guestName, guestTitle }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4 bg-primary">
       {/* Paper Texture Overlay */}
@@ -106,6 +111,23 @@ export default function Hero() {
             សិរីមង្គលពិធីភ្ជាប់ពាក្យ
           </p>
         </motion.div>
+
+        {/* Guest Name Display */}
+        {guestName && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="my-6"
+          >
+            <div className="inline-block border border-accent/30 rounded-lg px-8 py-4 bg-primary/50">
+              <p className="text-accent/60 text-sm tracking-wider mb-1 khmer-text">ជូនចំពោះ</p>
+              <p className="text-accent text-2xl md:text-3xl font-medium khmer-text">
+                {guestTitle && <span>{guestTitle} </span>}{guestName}
+              </p>
+            </div>
+          </motion.div>
+        )}
 
         {/* Decorative Line */}
         <motion.div
