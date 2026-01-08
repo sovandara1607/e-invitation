@@ -65,37 +65,15 @@ export default function EventDetails() {
           className="text-center mb-16"
         >
           <h2 className="khmer-title text-4xl md:text-5xl mb-4 text-primary">
-            កម្មវិធីសិរីមង្គលពិធីភ្ជាប់ពាក្យ
+            កម្មវិធីសិរីមង្គល<br/><br/>ពិធីភ្ជាប់ពាក្យ
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-primary/70 khmer-text">ថ្ងៃអាទិត្យ ទី១៤ ខែកុម្ភៈ ឆ្នាំ២០២៦</p>
         </motion.div>
 
         {/* Countdown Timer */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl text-center mb-8 tracking-wider text-primary khmer-text">រាប់ថយក្រោយដល់ថ្ងៃពិសេសរបស់យើង</h3>
-          <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {[
-              { label: 'ថ្ងៃ', value: timeLeft.days },
-              { label: 'ម៉ោង', value: timeLeft.hours },
-              { label: 'នាទី', value: timeLeft.minutes },
-              { label: 'វិនាទី', value: timeLeft.seconds },
-            ].map((item) => (
-              <div key={item.label} className="text-center bg-primary p-6 rounded-sm shadow-lg relative overflow-hidden">
-                {/* Decorative border */}
-                <div className="absolute inset-1 border border-accent/30 pointer-events-none"></div>
-                <div className="text-4xl font-light text-accent mb-2">{item.value}</div>
-                <div className="text-sm tracking-wider text-accent/80 khmer-text">{item.label}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        
+
 
         {/* Event Schedule - Khmer Style */}
         <motion.div
