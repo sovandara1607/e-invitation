@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock, FaEnvelopeOpenText, FaHeart, FaPhone, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 // Traditional Khmer-style floral border - Top
@@ -141,7 +142,7 @@ const SideOrnament = ({ side }: { side: 'left' | 'right' }) => (
   </div>
 );
 
-const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
+const LandingPage = ({ onOpen, guestName }: { onOpen: () => void; guestName: string | null }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -162,6 +163,22 @@ const LandingPage = ({ onOpen }: { onOpen: () => void }) => (
     >
       <FloralBorderTop />
     </motion.div>
+
+    {/* Guest Name Greeting */}
+    {guestName && (
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        className="text-center z-10 mb-4"
+      >
+        <p className="text-[#D4A84B]/70 text-sm tracking-wider mb-1">សូមគោរពអញ្ជើញ</p>
+        <p className="font-moul text-xl md:text-2xl text-[#F0D78C] drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(212, 168, 75, 0.4)' }}>
+          {guestName}
+        </p>
+        <GoldDivider className="mt-4" />
+      </motion.div>
+    )}
 
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -221,7 +238,17 @@ export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
   const [showContact, setShowContact] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [guestName, setGuestName] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const searchParams = useSearchParams();
+
+  // Read guest name from URL parameter
+  useEffect(() => {
+    const guest = searchParams.get('guest');
+    if (guest) {
+      setGuestName(decodeURIComponent(guest));
+    }
+  }, [searchParams]);
 
   const handleOpenInvitation = () => {
     setIsOpen(true);
@@ -259,7 +286,7 @@ export default function WeddingInvitation() {
 
       <AnimatePresence mode="wait">
         {!isOpen ? (
-          <LandingPage key="landing" onOpen={handleOpenInvitation} />
+          <LandingPage key="landing" onOpen={handleOpenInvitation} guestName={guestName} />
         ) : (
           <motion.main
             key="invitation"
@@ -280,6 +307,18 @@ export default function WeddingInvitation() {
 
             <div className="max-w-lg mx-auto px-4 py-8 relative z-10">
               
+              {/* Guest Greeting */}
+              {guestName && (
+                <motion.div {...fadeInUp} className="text-center mb-8">
+                  <div className="inline-block border border-[#D4A84B]/40 rounded-xl px-8 py-4 bg-gradient-to-r from-[#0A3D2E]/50 to-[#0D4A38]/50">
+                    <p className="text-[#D4A84B]/70 text-sm tracking-wider mb-1">ជូនចំពោះ</p>
+                    <p className="font-moul text-2xl text-[#F0D78C] drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(212, 168, 75, 0.4)' }}>
+                      {guestName}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               <section id="hero" className="mb-12">
                 <motion.div {...fadeInUp}><FloralBorderTop /></motion.div>
                 <motion.div {...fadeInUp} className="text-center my-6">
