@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 export default function OurStory() {
   const parents = {
     groom: {
-      father: 'លោក ជា ទុង',
-      mother: 'លោកស្រី សុខ មិថុនា',
+      father: 'N/A',
+      mother: 'N/A',
     },
     bride: {
-      father: 'លោក យីន សុខចិន្តា',
-      mother: 'លោកស្រី កែវ សុខមិត្រា',
+      father: 'N/A',
+      mother: 'n/a',
     },
   };
 
@@ -155,12 +155,12 @@ export default function OurStory() {
 
             <div className="grid grid-cols-2 gap-16">
               <div className="text-center">
-                <p className="text-accent/60 text-sm mb-2 khmer-text">កូនប្រុសម្ហ៍</p>
-                <h3 className="khmer-title text-2xl text-accent">យីន សុខារិទ្ធិ</h3>
+                <p className="text-accent/60 text-sm mb-2 khmer-text">កូនប្រុស</p>
+                <h3 className="khmer-title text-2xl text-accent">ដូលីន ផានីរាជ</h3>
               </div>
               <div className="text-center">
-                <p className="text-accent/60 text-sm mb-2 khmer-text">កូនស្រីនាង</p>
-                <h3 className="khmer-title text-2xl text-accent">ជា ចារីយ៉ា</h3>
+                <p className="text-accent/60 text-sm mb-2 khmer-text">កូនស្រីនាម</p>
+                <h3 className="khmer-title text-2xl text-accent">ហុង ណាតា</h3>
               </div>
             </div>
           </div>
