@@ -151,7 +151,7 @@ export default function OurStory() {
               </svg>
             </div>
 
-            <p className="text-accent/60 text-sm mb-4 khmer-text">ដាក្រី៩</p>
+            <p className="text-accent/60 text-sm mb-4 khmer-text">ជាគូនឹង</p>
 
             <div className="grid grid-cols-2 gap-16">
               <div className="text-center">
