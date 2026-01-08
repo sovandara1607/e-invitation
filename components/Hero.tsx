@@ -97,12 +97,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          className="space-y-2"
         >
-          <p className="text-lg tracking-[0.3em] uppercase mb-2 text-accent/80 khmer-text">
-            លិខិតអញ្ជើញ
+          <p className="text-sm tracking-wider text-accent/60 khmer-text">
+            ~ លិខិតអញ្ជើញ ~
           </p>
-          <p className="text-lg tracking-[0.3em] uppercase mb-2 text-accent/80 khmer-text">
-            លិខិតអញ្ជើញសិរីមង្គលពិធីភ្ជាប់ពាក្យ
+          <p className="text-xl md:text-2xl text-accent/90 khmer-text font-medium">
+            សិរីមង្គលពិធីភ្ជាប់ពាក្យ
           </p>
         </motion.div>
 

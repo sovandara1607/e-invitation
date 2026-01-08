@@ -33,7 +33,7 @@ export default function Footer() {
             <circle cx="100" cy="20" r="3" fill="currentColor" opacity="0.5"/>
           </svg>
 
-          <h3 className="khmer-title text-4xl mb-2 text-accent">សុភា & វិសាល</h3>
+          <h3 className="khmer-title text-4xl mb-2 text-accent">ផានីរាជ & ណាតា</h3>
           <p className="text-lg mb-4 text-accent/80 khmer-text">ពិធីភ្ជាប់ពាក្យ</p>
           <p className="text-xl mb-8 text-accent/70">៤ មករា ២០២៦</p>
 
@@ -87,7 +87,7 @@ export default function Footer() {
             បង្កើតដោយ <FaHeart className="text-accent animate-pulse" /> សម្រាប់ថ្ងៃពិសេសរបស់យើង
           </p>
           <p className="text-xs text-accent/40">
-            © ២០២៦ រក្សាសិទ្ធិគ្រប់យ៉ាង។
+            © ២០២៦ រក្សាសិទ្ធិគ្រប់យ៉ាង។ Developed with ❤️ by Dara & Linhcheu.
           </p>
         </motion.div>
 
