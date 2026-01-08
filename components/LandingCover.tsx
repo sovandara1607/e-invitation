@@ -5,6 +5,8 @@ import { useState, useEffect, useMemo } from 'react';
 
 interface LandingCoverProps {
   onEnter: () => void;
+  guestName: string | null;
+  guestTitle: string;
 }
 
 // Pre-computed particle positions to avoid hydration mismatch
@@ -21,7 +23,7 @@ const PARTICLE_POSITIONS = [
 const PARTICLE_DURATIONS = [3, 3.5, 4, 4.5, 5, 3.2, 3.8, 4.2, 4.8, 3.6, 4.4, 3.3, 4.1, 3.7, 4.6, 3.9, 4.3, 3.4, 4.7, 3.1];
 const PARTICLE_DELAYS = [0, 0.5, 1, 1.5, 0.3, 0.8, 1.2, 0.2, 0.7, 1.8, 0.4, 0.9, 1.4, 0.6, 1.1, 1.6, 0.1, 1.3, 0.55, 1.7];
 
-export default function LandingCover({ onEnter }: LandingCoverProps) {
+export default function LandingCover({ onEnter, guestName, guestTitle }: LandingCoverProps) {
   const [isExiting, setIsExiting] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -132,6 +134,22 @@ export default function LandingCover({ onEnter }: LandingCoverProps) {
         >
           សួស្ដីសិរីមង្គល
         </motion.p>
+
+        {/* Guest Name Display */}
+        {guestName && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mb-6"
+          >
+            <p className="text-accent/60 text-sm tracking-wider mb-2 khmer-text">ជូនចំពោះ</p>
+            <p className="text-accent text-2xl md:text-3xl font-medium khmer-text">
+              {guestTitle && <span>{guestTitle} </span>}{guestName}
+            </p>
+            <div className="w-32 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent mx-auto mt-4" />
+          </motion.div>
+        )}
 
         <motion.h1
           initial={{ opacity: 0, scale: 0.8 }}

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import LandingCover from "@/components/LandingCover";
 import Hero from "@/components/Hero";
@@ -11,8 +12,45 @@ import GoogleMap from "@/components/GoogleMap";
 import Footer from "@/components/Footer";
 import MusicPlayer from "@/components/MusicPlayer";
 
+// Helper function to get honorific title based on gender
+const getHonorificTitle = (gender: string | null): string => {
+  switch (gender) {
+    case 'm':
+    case 'male':
+      return 'លោក';
+    case 'f':
+    case 'female':
+      return 'អ្នកស្រី';
+    case 'miss':
+      return 'កញ្ញា';
+    case 'family':
+      return 'គ្រួសារ';
+    case 'couple':
+      return 'លោក និង អ្នកស្រី';
+    default:
+      return '';
+  }
+};
+
 export default function Home() {
   const [showMain, setShowMain] = useState(false);
+  const [guestName, setGuestName] = useState<string | null>(null);
+  const [guestTitle, setGuestTitle] = useState<string>('');
+  const searchParams = useSearchParams();
+
+  // Read guest name and gender from URL parameters
+  // Example: ?guest=សុខ+សាន&gender=m
+  useEffect(() => {
+    const guest = searchParams.get('guest');
+    const gender = searchParams.get('gender');
+    
+    if (guest) {
+      setGuestName(decodeURIComponent(guest));
+    }
+    if (gender) {
+      setGuestTitle(getHonorificTitle(gender));
+    }
+  }, [searchParams]);
 
   const handleEnter = () => {
     setShowMain(true);
@@ -21,7 +59,7 @@ export default function Home() {
   return (
     <>
       <AnimatePresence>
-        {!showMain && <LandingCover onEnter={handleEnter} />}
+        {!showMain && <LandingCover onEnter={handleEnter} guestName={guestName} guestTitle={guestTitle} />}
       </AnimatePresence>
 
       {showMain && (
@@ -32,7 +70,7 @@ export default function Home() {
           className="min-h-screen"
         >
           <MusicPlayer autoPlay={true} />
-          <Hero />
+          <Hero guestName={guestName} guestTitle={guestTitle} />
           <EventDetails />
           <OurStory />
           <GoogleMap />
